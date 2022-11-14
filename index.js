@@ -75,4 +75,4 @@ if (message.content.startsWith(prefix) && message.content != "/commands" && mess
 
 
 
- client.login("MTA0MTMwMDY0MjYxNjA2NjA4OA.G0_rjU.BvO53L93NBYIAoykKqi74GsU_5ZOLawol7klzE");
+ client.login("MTA0MTMwMDY0MjYxNjA2NjA4OA.Gvc1Na.4UAMww9VCD9uWr5BcFEGOd3RzAs_q6P5YqVV0Q");
