@@ -1,9 +1,19 @@
 const {Client, GatewayIntentBits, EmbedBuilder, PermissionsBitField, Permissions, ActivityType } = require(`discord.js`);
-
+const express = require("express");
+const app = express();
 
 //symbol to add before each command to Chad
 const prefix = "/";
 const botChannel = 1041323546384814142;
+
+
+app.listen(3000, () => {
+  console.log("Project is running!");
+  })
+  app.get("/", (req, res) => {
+  res.send("Hello world!");
+  })
+
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent]});
 
