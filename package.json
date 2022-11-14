@@ -1,0 +1,19 @@
+{
+  "name": "chad-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stephen-Onochie/Chad-Bot.git"
+  },
+  "author": "Stephen Onochie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Stephen-Onochie/Chad-Bot/issues"
+  },
+  "homepage": "https://github.com/Stephen-Onochie/Chad-Bot#readme"
+}
