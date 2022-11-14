@@ -1,4 +1,5 @@
-const {Client, GatewayIntentBits, EmbedBuilder, PermissionsBitField, Permissions } = require(`discord.js`);
+const {Client, GatewayIntentBits, EmbedBuilder, PermissionsBitField, Permissions, ActivityType } = require(`discord.js`);
+
 
 //symbol to add before each command to Chad
 const prefix = "/";
@@ -8,7 +9,12 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBit
 
 client.on("ready", () => {
     console.log("Chad is online!");
-    client.user.setActivity(`the Server`, {type: "WATCHING"});
+
+    client.user.setPresence({
+      activities: [{ name: `Cone Peeps`, type: ActivityType.Watching }],
+      status: 'Online',
+    });
+
     const Discord = require("discord.js");
     const fs = require("fs");
     client.commands = new Discord.Collection();
