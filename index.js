@@ -10,6 +10,7 @@ const botChannel = 1041323546384814142;
 app.listen(3000, () => {
   console.log("Project is running!");
   })
+
   app.get("/", (req, res) => {
   res.send("Hello world!");
   })
@@ -91,4 +92,4 @@ if (message.content.startsWith(prefix) && message.content != "/commands" && mess
 
 
 
- client.login("MTA0MTMwMDY0MjYxNjA2NjA4OA.Gvc1Na.4UAMww9VCD9uWr5BcFEGOd3RzAs_q6P5YqVV0Q");
+ client.login(process.env['token']);
