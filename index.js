@@ -40,27 +40,10 @@ client.on("ready", () => {
 
 })
 
-client.on("messageCreate", (message) => { /////
-//     if (!message.content.startsWith(prefix) || message.author.bot) return;
+client.on("messageCreate", (message) => {
 
-//     const args = message.content.slice(prefix.length).split(/ +/);
-//     const command = args.shift().toLowerCase();
 
-//     //message array
-
-//     const messageArray = message.content.split(" ");
-//     const argument = messageArray.slice(1);
-//     const cmd = messageArray[0];
-
-//     //COMMANDS
-
-// //test command
-
-// if (command === "ping") {
-//     message.channel.send("pong! Finally I work!");
-// }
-
-if (message.content.startsWith(prefix) && message.content != "/commands" && message.channel == botChannel) { ///////////////////////
+if (message.content.startsWith(prefix) && message.content != "/commands" && message.channel == botChannel) { 
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const commandName = args.shift();
   
@@ -70,26 +53,5 @@ if (message.content.startsWith(prefix) && message.content != "/commands" && mess
   }
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
  client.login(process.env['token']);
