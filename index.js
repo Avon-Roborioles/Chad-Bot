@@ -48,6 +48,7 @@ if (message.content.startsWith(prefix) && message.content != "/commands" && mess
     const commandName = args.shift();
   
     const command = client.commands.get(commandName);
+    console.log("Last said command was " + commandName);
     if (!command) return message.channel.send({content: "That command doesn't exist!"});
     command.run(client, message, args);
   }
