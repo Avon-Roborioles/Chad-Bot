@@ -2,6 +2,7 @@ const {Client, GatewayIntentBits, EmbedBuilder, PermissionsBitField, Permissions
 const express = require("express");
 const app = express();
 
+
 //symbol to add before each command to Chad
 const prefix = "/";
 const botChannel = 1041323546384814142;
@@ -20,7 +21,8 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBit
 
 client.on("ready", () => {
     console.log("Chad is online!");
-
+  
+    
     client.user.setPresence({
       activities: [{ name: `Cone Peeps`, type: ActivityType.Watching }],
       status: 'Online',
