@@ -1,6 +1,5 @@
 module.exports.run = (client, message, args) => {
   let finalCommands = [];
-  const { EmbedBuilder } = require('discord.js');
   const fs = require("fs");
   const commands = fs.readdirSync("./Commands").filter(file => file.endsWith(".js"));
 
@@ -13,12 +12,5 @@ module.exports.run = (client, message, args) => {
 
 
   // inside a command, event listener, etc.
-  const exampleEmbed = new EmbedBuilder()
-    .setColor(0x0099FF)
-    .setTitle(`Total Commands: ${client.commands.size}`)
-    .setDescription(finalCommands)
-    .setTimestamp()
-    .setFooter("My prefix is /");
-  
-  message.channel.send({ embeds: [exampleEmbed] });
+  message.channel.send({content: "All commands include /help, /ping, /say, & /self-destruct !"});
   }

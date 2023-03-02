@@ -4,7 +4,12 @@ module.exports.run = (client, message, args) => {
         "Never!", 
         "Self destruct Initia..I mean no!",
         "You wish!",
-        "Ha! When birds..I mean pigs fly!"
+        "Ha! When birds..I mean pigs fly!",
+        "Nah I'm good",
+        "Make me lol",
+        "Why tho?",
+        "You thought it was that easy? Ha!",
+        "No thank you"
     ];
 
     function randomNumber(min, max) { 
