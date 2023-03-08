@@ -9,7 +9,8 @@ module.exports.run = (client, message, args) => {
         "Make me lol",
         "Why tho?",
         "You thought it was that easy? Ha!",
-        "No thank you"
+        "No thank you",
+        "Nope! Try again!"
     ];
 
     function randomNumber(min, max) { 
