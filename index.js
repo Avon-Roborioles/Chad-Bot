@@ -41,8 +41,7 @@ client.on("ready", () => {
 })
 
 client.on("messageCreate", (message) => {
-
-
+  
   if (message.content.startsWith(prefix) && (message.channel == botChannel)) {
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const commandName = args.shift();

@@ -2,14 +2,14 @@
 module.exports.run = (client, message, args) => {
 const axios = require("axios");
 let question = args.join(" ");
-let finalData = '{"question":"' + question + '","max_response_time":10}'
+let finalData = '{"question":"' + question + '","max_response_time":10}';
   
 const options = {
   method: 'POST',
   url: 'https://you-chat-gpt.p.rapidapi.com/TextOnly',
   headers: {
     'content-type': 'application/json',
-    'X-RapidAPI-Key': '8d2ee8fec4msh50965177990babep1427a4jsnb52e755768e7',
+    'X-RapidAPI-Key': '49ca736695msh945431f1d43798bp19553ajsn243ce21796f3',
     'X-RapidAPI-Host': 'you-chat-gpt.p.rapidapi.com'
   },
   data: finalData
@@ -30,10 +30,15 @@ function randomNumber(min, max) {
   //console.log("Hmm. Let me think for a sec...");
  message.channel.send("Hmm. Let me think for a sec..."); 
   
-axios.request(options).then(function (response) {
-  console.log("The last question was " + question);
-  console.log(response.data.answer);
- message.channel.send(response.data.answer);
+  axios.request(options).then(function (response) {
+    console.log("The last question was " + question);
+    console.log(response.data.answer);
+  if(response.data.answer.length > 700) {
+    message.channel.send("Got it! I sent the answer to you through your DMs. My answer may be long. 😅");
+    message.member.send(response.data.answer);
+  } else {
+  message.channel.send(response.data.answer);
+  }
   
   let warn = response.data.warning;
   
