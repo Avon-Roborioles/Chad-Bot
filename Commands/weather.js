@@ -19,7 +19,6 @@ module.exports.run = (client, message, args) => {
   
   axios.request(options).then(function(response) {
   let finalResponse = `The current temperature is ${response.data.current.temp_f} degrees Fahrenheit in ${response.data.location.name}.`;
-    console.log(response.data.current);
     message.channel.send(finalResponse);
   }).catch(function(error) {
     console.error(error);

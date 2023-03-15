@@ -2,11 +2,10 @@ const { Client, GatewayIntentBits, EmbedBuilder, PermissionsBitField, Permission
 const express = require("express");
 const app = express();
 
-
 //symbol to add before each command to Chad
 const prefix = "/";
 const botChannel = 1041323546384814142;
-
+const testChannel = 1083842337932857408;
 
 app.listen(3000, () => {
   console.log("Project is running!");
@@ -42,7 +41,7 @@ client.on("ready", () => {
 
 client.on("messageCreate", (message) => {
   
-  if (message.content.startsWith(prefix) && (message.channel == botChannel)) {
+  if (message.content.startsWith(prefix) && (message.channel == botChannel || testChannel)) {
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const commandName = args.shift();
 
