@@ -1,7 +1,10 @@
 const { Client, GatewayIntentBits, EmbedBuilder, PermissionsBitField, Permissions, ActivityType } = require(`discord.js`);
 const express = require("express");
 const app = express();
-
+const db = require("./database.js");
+let input = false;
+var rl = require('readline-sync');
+//const lim = db.
 //symbol to add before each command to Chad
 const prefix = "/";
 const botChannel = 1041323546384814142;
@@ -39,8 +42,8 @@ client.on("ready", () => {
   }
 })
 
+if (input == false) {
 client.on("messageCreate", (message) => {
-  
   if (message.content.startsWith(prefix) && (message.channel == botChannel || testChannel)) {
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const commandName = args.shift();
@@ -48,10 +51,22 @@ client.on("messageCreate", (message) => {
     const command = client.commands.get(commandName);
     console.log("Last said command was " + commandName);
     if (!command) return message.channel.send({ content: "That command doesn't exist!" });
-    command.run(client, message, args);
-  } else if (message.guild == null && message.author.id !== 'botDiscordId') {
-    message.reply("It worked!");
+    command.run(client, message, args, db, input);
   }
+  
 
 });
+} else {
+  message = rl.question("What do you think of node.js? ")
+  //client.on("messageCreate", (message) => {
+    const args = message.slice(prefix.length).trim().split(/ +/g);
+    const commandName = args.shift();
+
+    const command = client.commands.get(commandName);
+    console.log("Last said command was " + commandName);
+    command.run(client, message, args, db, input);
+  
+
+//});
+}
 client.login(process.env['token']);

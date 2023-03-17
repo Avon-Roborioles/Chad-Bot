@@ -1,11 +1,30 @@
 //text only answers
-module.exports.run = (client, message, args) => {
+module.exports.run = (client, message, args, db) => {
 const axios = require("axios");
-const database = require("./database.js");
 let question = args.join(" ");
 let finalData = '{"question":"' + question + '","max_response_time":10}';
+let API = "YouChat-GPT";
   
-console.log(database.APILimit());
+//console.log(db.APILimit("YouChat-GPT"));
+async function quickc () {
+  let c = await db.APILimit(API);
+  let z = await db.APICurrent(API);
+  if (c > z) {
+    console.log(`${API}'s Limit of ${c} is greater than its current api uses of ${z}`);
+  } else {
+    console.log("Hmmm. I would take another look...");
+  }
+}
+
+ quickc(); 
+  
+// if (db.APILimit("YouChat-GPT") == 100) {
+//   console.log("It works!");
+// } else {
+//   console.log("Hmmm. I would take another look...");
+// }
+
+  
 message.channel.send("Sorry, this command is closed today. Stephen needs to fix some issues!");  
 // const options = {
 //   method: 'POST',
