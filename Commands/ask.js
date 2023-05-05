@@ -6,7 +6,8 @@ module.exports.run = (client, message, args, db) => {
   let API1 = "YouChat-GPT";
   let API2;
   let API3;
-
+  const RAK = process.env['X-RapidAPI-Key']
+  
   if (db.CanUseAPI(API1)) {
     // message.channel.send("Sorry, this command is closed today. Stephen needs //to fix some issues!");  
     const options = {
@@ -14,7 +15,7 @@ module.exports.run = (client, message, args, db) => {
       url: 'https://you-chat-gpt.p.rapidapi.com/TextOnly',
       headers: {
         'content-type': 'application/json',
-        'X-RapidAPI-Key': '49ca736695msh945431f1d43798bp19553ajsn243ce21796f3',
+        'X-RapidAPI-Key': RAK,
         'X-RapidAPI-Host': 'you-chat-gpt.p.rapidapi.com'
       },
       data: finalData

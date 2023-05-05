@@ -1,11 +1,12 @@
 module.exports.run = (client, message, args) => {
 const axios = require("axios");
+const RAK = process.env['X-RapidAPI-Key']
 
 const options = {
   method: 'GET',
   url: 'https://programming-memes-images.p.rapidapi.com/v1/memes',
   headers: {
-    'X-RapidAPI-Key': '49ca736695msh945431f1d43798bp19553ajsn243ce21796f3',
+    'X-RapidAPI-Key': RAK,
     'X-RapidAPI-Host': 'programming-memes-images.p.rapidapi.com'
   }
 };

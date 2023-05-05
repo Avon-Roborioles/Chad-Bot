@@ -69,6 +69,5 @@ client.on("messageCreate", (message) => {
     command.run(client, message, args, db, input);
   
 
-//});
 }
 client.login(process.env['token']);
