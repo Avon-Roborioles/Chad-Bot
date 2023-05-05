@@ -7,8 +7,10 @@ var rl = require('readline-sync');
 //const lim = db.
 //symbol to add before each command to Chad
 const prefix = "/";
-const botChannel = 1041323546384814142;
-const testChannel = 1083842337932857408;
+const botChannel = process.env['botChannel']
+const testChannel = process.env['testChannel']
+
+
 
 app.listen(3000, () => {
   console.log("Project is running!");

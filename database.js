@@ -1,8 +1,8 @@
 
 const { MongoClient, ServerApiVersion, Collection } = require('mongodb');
-//import {MongoClient, ServerApiVersion } from "mongodb";
-const uri = "mongodb+srv://ChadBot:avon2023@chadcluster.8ubdagy.mongodb.net/?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+const url = process.env['databaseURL']
+
+const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 const dbName = "API_Limits";
 let APILim = null;
 let APICur = null;
@@ -75,7 +75,7 @@ async function UpdateAPI(API){
     const db = client.db(dbName);
     const col = db.collection("Rapid_API");
 
-    let new currentNum = 1 + this.APICurrent(API);
+    let currentNum = 1 + this.APICurrent(API);
     
    col.updateOne({Name: API},
       {                 

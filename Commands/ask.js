@@ -7,19 +7,6 @@ module.exports.run = (client, message, args, db) => {
   let API2;
   let API3;
 
-  //console.log(db.APILimit("YouChat-GPT"));
-  // async function quickc () {
-  //   //let c = await db.APILimit(API);
-  //   //let z = await db.APICurrent(API);
-  //   if (await db.CanUseAPI(API)) {
-  //     console.log(`${API}'s Limit of ${await db.APILimit(API)} is greater than its current api uses of ${await db.APICurrent(API)}`);
-  //   } else {
-  //     console.log("Hmmm. I would take another look...");
-  //   }
-  // }
-
-  //  quickc(); 
-
   if (db.CanUseAPI(API1)) {
     // message.channel.send("Sorry, this command is closed today. Stephen needs //to fix some issues!");  
     const options = {
