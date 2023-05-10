@@ -8,17 +8,19 @@ module.exports.run = (client, message, args, db) => {
   let API3;
   const RAK = process.env['X-RapidAPI-Key']
   
-  if (db.CanUseAPI(API1)) {
+  //if (db.CanUseAPI(API1)) {
     // message.channel.send("Sorry, this command is closed today. Stephen needs //to fix some issues!");  
     const options = {
       method: 'POST',
-      url: 'https://you-chat-gpt.p.rapidapi.com/TextOnly',
+      url: 'https://chatgpt-gpt-3-5.p.rapidapi.com/ask',
       headers: {
         'content-type': 'application/json',
         'X-RapidAPI-Key': RAK,
-        'X-RapidAPI-Host': 'you-chat-gpt.p.rapidapi.com'
+        'X-RapidAPI-Host': 'chatgpt-gpt-3-5.p.rapidapi.com'
       },
-      data: finalData
+      data: {
+        query: question
+      }
 };
 
     const errorResponses = [
@@ -36,26 +38,39 @@ module.exports.run = (client, message, args, db) => {
     //console.log("Hmm. Let me think for a sec...");
     message.channel.send("Hmm. Let me think for a sec...");
 
-    axios.request(options).then(function(response) {
-      console.log("The last question was " + question);
-      console.log(response.data.answer);
-      if (response.data.answer.length > 700) {
-        message.channel.send("Got it! I sent the answer to you through your DMs. My answer may be long. 😅");
-        message.member.send(response.data.answer);
-      } else {
-        message.channel.send(response.data.answer);
-      }
-
-      let warn = response.data.warning;
-
-    }).catch(function(error) {
-      console.log("The last question was " + question);
-      message.channel.send(errorResponses[randomNum]);
-      console.error(error);
-    });
-    console.log("The program runs well until it updates the API count");
-    //db.UpdateAPI(API1);
-  } else {
-    message.channel.send("Sorry! This command has reached its limit for the month. Stephen is working on this!");
+  async function runcommand() {
+     try {
+	const response = await axios.request(options);
+	//console.log(response.data.response);
+  message.channel.send(response.data.response);
+} catch (error) {
+	console.error(error);
+}
   }
+  runcommand();
+  //------
+    // axios.request(options).then(function(response) {
+    //   console.log("The last question was " + question);
+    //   console.log(response.data);
+      
+    //   if (response.data.length > 700) {
+    //     message.channel.send("Got it! I sent the answer to you through your DMs. My answer may be long. 😅");
+    //     message.member.send(response.data);
+    //   } else {
+    //     message.channel.send(response.data);
+    //   }
+
+    //   //let warn = response.data.warning;
+
+    // }).catch(function(error) {
+    //   console.log("The last question was " + question);
+    //   message.channel.send(errorResponses[randomNum]);
+    //   console.error(error);
+    // });
+  //-----------
+    //console.log("The program runs well until it updates the API count");
+    //db.UpdateAPI(API1);
+  // } else {
+  //   message.channel.send("Sorry! This command has reached its limit for the month. Stephen is working on this!");
+  // }
 }
