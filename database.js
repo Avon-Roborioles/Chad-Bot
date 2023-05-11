@@ -1,6 +1,6 @@
 
 const { MongoClient, ServerApiVersion, Collection } = require('mongodb');
-const url = process.env['databaseURL']
+const url = process.env.databaseURL
 
 const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 const dbName = "API_Limits";
