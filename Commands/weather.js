@@ -4,7 +4,7 @@ module.exports.run = (client, message, args, db) => {
   let day = date.getDay() + 1;
   let city = "'" +  args.join(" ") + "'";
   let API = "WeatherAPI";
-  const RAK = process.env['X-RapidAPI-Key']
+  const RAK = process.env.X-RapidAPI-Key
 
   if(db.CanUseAPI(API)) {
   const options = {
