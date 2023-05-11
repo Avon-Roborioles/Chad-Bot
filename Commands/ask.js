@@ -6,7 +6,7 @@ module.exports.run = (client, message, args, db) => {
   let API1 = "YouChat-GPT";
   let API2;
   let API3;
-  const RAK = process.env['X-RapidAPI-Key']
+  const RAK = process.env.X-RapidAPI-Key
   
   //if (db.CanUseAPI(API1)) {
     // message.channel.send("Sorry, this command is closed today. Stephen needs //to fix some issues!");  

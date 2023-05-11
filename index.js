@@ -7,8 +7,8 @@ var rl = require('readline-sync');
 //const lim = db.
 //symbol to add before each command to Chad
 const prefix = "/";
-const botChannel = process.env['botChannel']
-const testChannel = process.env['testChannel']
+const botChannel = process.env.botChannel
+const testChannel = process.env.testChannel
 
 
 
@@ -70,4 +70,4 @@ client.on("messageCreate", (message) => {
   
 
 }
-client.login(process.env['token']);
+client.loginprocess.env.token;
