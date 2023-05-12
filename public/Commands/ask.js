@@ -43,6 +43,7 @@ module.exports.run = (client, message, args, db) => {
 	const response = await axios.request(options);
 	//console.log(response.data.response);
   message.channel.send(response.data.response);
+       console.log("Message Sent!")
 } catch (error) {
 	console.error(error);
 }
