@@ -1,3 +1,18 @@
+//run npm install firebase to work on device
+//npm install -g firebase-tools
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBYRd8_A-tQXw3EN1_j0hyfdFUjH8RbPbg",
+  authDomain: "chad-bot-a15df.firebaseapp.com",
+  projectId: "chad-bot-a15df",
+  storageBucket: "chad-bot-a15df.appspot.com",
+  messagingSenderId: "997842399178",
+  appId: "1:997842399178:web:babc83c20f44cd6508a933"
+};
+
+const app = initializeApp(firebaseConfig);
+
 
 const { MongoClient, ServerApiVersion, Collection } = require('mongodb');
 const url = process.env.databaseURL
