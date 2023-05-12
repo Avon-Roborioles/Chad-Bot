@@ -12,7 +12,7 @@ const testChannel = process.env.testChannel
 
 
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("Project is running!");
 })
 
@@ -70,4 +70,4 @@ client.on("messageCreate", (message) => {
   
 
 }
-client.loginprocess.env.token;
+client.login(process.env.token);
