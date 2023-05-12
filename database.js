@@ -8,7 +8,7 @@ const firebaseConfig = {
   projectId: "chad-bot-a15df",
   storageBucket: "chad-bot-a15df.appspot.com",
   messagingSenderId: "997842399178",
-  appId: "1:997842399178:web:babc83c20f44cd6508a933"
+  appId: "1:997842399178:web:feb0d35a7ceaca7108a933"
 };
 
 const app = initializeApp(firebaseConfig);
