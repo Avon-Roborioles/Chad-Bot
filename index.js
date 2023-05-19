@@ -1,23 +1,23 @@
 const { Client, GatewayIntentBits, EmbedBuilder, PermissionsBitField, Permissions, ActivityType } = require(`discord.js`);
-const express = require("express");
+const express = require("express")();
 const app = express();
 const db = require("./database.js");
 let input = false;
 var rl = require('readline-sync');
-//const lim = db.
+const PORT = process.env.PORT || 3000;
 //symbol to add before each command to Chad
 const prefix = "/";
 const botChannel = process.env['botChannel']
 const testChannel = process.env['testChannel']
 
 
-
-app.listen(3000, () => {
-  console.log("Project is running!");
+app.get("", (req, res) => {
+  res.send("Hello world!");
 })
 
-app.get("/", (req, res) => {
-  res.send("Hello world!");
+app.listen(PORT, () => {
+  console.log("Project is running!");
+  console.log(`App is up at port ${PORT}`)
 })
 
 
