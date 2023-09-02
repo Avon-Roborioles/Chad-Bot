@@ -1,5 +1,5 @@
 //text only answers
-module.exports.run = (client, message, args, db) => {
+module.exports.run = (client, message, args) => {
   const axios = require("axios");
   let question = args.join(" ");
   let finalData = '{"question":"' + question + '","max_response_time":10}';
@@ -8,8 +8,7 @@ module.exports.run = (client, message, args, db) => {
   let API3;
   const RAK = process.env['X-RapidAPI-Key']
   
-  //if (db.CanUseAPI(API1)) {
-    // message.channel.send("Sorry, this command is closed today. Stephen needs //to fix some issues!");  
+
     const options = {
       method: 'POST',
       url: 'https://chatgpt-gpt-3-5.p.rapidapi.com/ask',
@@ -49,29 +48,5 @@ module.exports.run = (client, message, args, db) => {
 }
   }
   runcommand();
-  //------
-    // axios.request(options).then(function(response) {
-    //   console.log("The last question was " + question);
-    //   console.log(response.data);
-      
-    //   if (response.data.length > 700) {
-    //     message.channel.send("Got it! I sent the answer to you through your DMs. My answer may be long. 😅");
-    //     message.member.send(response.data);
-    //   } else {
-    //     message.channel.send(response.data);
-    //   }
-
-    //   //let warn = response.data.warning;
-
-    // }).catch(function(error) {
-    //   console.log("The last question was " + question);
-    //   message.channel.send(errorResponses[randomNum]);
-    //   console.error(error);
-    // });
-  //-----------
-    //console.log("The program runs well until it updates the API count");
-    //db.UpdateAPI(API1);
-  // } else {
-  //   message.channel.send("Sorry! This command has reached its limit for the month. Stephen is working on this!");
-  // }
+  
 }

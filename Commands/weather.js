@@ -1,4 +1,4 @@
-module.exports.run = (client, message, args, db) => {
+module.exports.run = (client, message, args) => {
   const axios = require("axios");
   let date = new Date();
   let day = date.getDay() + 1;
@@ -6,7 +6,6 @@ module.exports.run = (client, message, args, db) => {
   let API = "WeatherAPI";
   const RAK = process.env['X-RapidAPI-Key']
 
-  if(db.CanUseAPI(API)) {
   const options = {
     method: 'GET',
     url: 'https://weatherapi-com.p.rapidapi.com/current.json',
@@ -25,8 +24,5 @@ module.exports.run = (client, message, args, db) => {
   }).catch(function(error) {
     console.error(error);
   });
- // db.UpdateAPI(API);
-  } else {
-    message.channel.send("Sorry! This command has reached its limit for the month.");
-  }
+
 }
