@@ -52,7 +52,11 @@ client.on("ready", () => {
 
   client.on("messageCreate", (message) => {
     
-    if (message.content.startsWith(prefix) && (message.channel == botChannel || testChannel)) {
+    if (filter.isProfane(message.content)){
+      const command = client.commands.get("profanity");
+      command.run(client, message);
+      
+    } else if (message.content.startsWith(prefix) && (message.channel == botChannel || testChannel)) {
       const args = message.content.slice(prefix.length).trim().split(/ +/g);
       const commandName = args.shift();
 
@@ -64,9 +68,6 @@ client.on("ready", () => {
       command.run(client, message, args, input);
 
       
-    } else if (filter.isProfane(message.content)){
-      const command = client.commands.get("profanity");
-      command.run(client, message);
     }
 
 
