@@ -8,7 +8,8 @@ var rl = require('readline-sync');
 var Filter = require('bad-words'), //a server-wide filter for bad words
 
 filter = new Filter();
-filter.removeWords("hell");    
+filter.removeWords("hell");
+filter.removeWords("screw");  
 
 //symbol to add before each command to Chad
 const prefix = "/";
