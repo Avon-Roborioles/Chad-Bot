@@ -6,16 +6,17 @@ module.exports.run = (client, message, args) => {
 const { EmbedBuilder } = require('discord.js');
 
   //Notes
-  let TuesdayNotes = '- All Members Meeting: Game Breakdown & Discussion - 6pm to 8pm ';
-  let ThursdayNotes = '- All Members Meeting: Will Split Teams & Plan for Season - 6pm to 8pm';
-  let SaturdayNotes = 'All Members Meeting: Begin Prototyping Mechanisms - 9am to 12pm';
-  let MoreNotes = 'Make sure to sign in at every meeting to maintain your attendance record! 👍';
+  let Title = '10/22 to 10/28 Meetings:';
+  let TuesdayNotes = '- All Members Meeting: 6pm to 8pm';
+  let ThursdayNotes = '- All Members Meeting: 6pm to 8pm';
+  let SaturdayNotes = '-All Members Meeting: 9am to 12pm';
+  let MoreNotes = "All Members Event at Hummel Park from 1pm to 3pm after Saturday's Meeting! ";
 
   
 // inside a command, event listener, etc.
 const Meetings_Calendar = new EmbedBuilder()
 	.setColor("Gold")
-	.setTitle('9/10 to 9/16 Meetings')
+	.setTitle(Title)
 	.setURL('https://www.instagram.com/ahs.roborioles/')
 	.setAuthor({ name: 'Chad Bot | Roborioles', iconURL: 'https://asset-cdn.schoology.com/system/files/imagecache/profile_reg/courselogos/logo-1923125308_632db8558d3f9.png?1663940693', url: 'https://www.instagram.com/ahs.roborioles/' })
 	.setDescription('All Meetings for the Week:')

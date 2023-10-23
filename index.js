@@ -7,9 +7,17 @@ var rl = require('readline-sync');
 
 var Filter = require('bad-words'), //a server-wide filter for bad words
 
-filter = new Filter();
-filter.removeWords("hell");
-filter.removeWords("screw");  
+  filter = new Filter();
+
+const exemptWords = ["hell", "screw", "crap", "poop", "willy", "god"];
+
+// filter.removeWords("hell");
+// filter.removeWords("screw");
+// filter.removeWords("crap");
+
+for (let i = 0; i < exemptWords.length; i++) {
+  filter.removeWords(exemptWords[i]);
+}
 
 //symbol to add before each command to Chad
 const prefix = "/";
@@ -51,27 +59,27 @@ client.on("ready", () => {
 })
 
 
-  client.on("messageCreate", (message) => {
-    
-    if (filter.isProfane(message.content)){
-      const command = client.commands.get("profanity");
-      command.run(client, message);
-      
-    } else if (message.content.startsWith(prefix) && (message.channel == botChannel || testChannel)) {
-      const args = message.content.slice(prefix.length).trim().split(/ +/g);
-      const commandName = args.shift();
+client.on("messageCreate", (message) => {
 
-      const command = client.commands.get(commandName);
-      console.log("Last said command was " + commandName);
-      if (!command) return message.channel.send({ content: "That command doesn't exist!" });
-      
-      //Add db parameter after connection to Firebase
-      command.run(client, message, args, input);
+  if (filter.isProfane(message.content)) {
+    const command = client.commands.get("profanity");
+    command.run(client, message);
 
-      
-    }
+  } else if (message.content.startsWith(prefix) && (message.channel == botChannel || testChannel)) {
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    const commandName = args.shift();
+
+    const command = client.commands.get(commandName);
+    console.log("Last said command was " + commandName);
+    if (!command) return message.channel.send({ content: "That command doesn't exist!" });
+
+    //Add db parameter after connection to Firebase
+    command.run(client, message, args, input);
 
 
-  });
+  }
+
+
+});
 
 client.login(process.env['token']);

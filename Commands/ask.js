@@ -2,6 +2,7 @@
 module.exports.run = (client, message, args) => {
   const axios = require("axios");
   let question = args.join(" ");
+  console.log("question");
   let finalData = '{"question":"' + question + '","max_response_time":10}';
   let API1 = "YouChat-GPT";
   let API2;
