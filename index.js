@@ -9,7 +9,7 @@ var Filter = require('bad-words'), //a server-wide filter for bad words
 
   filter = new Filter();
 
-const exemptWords = ["hell", "screw", "crap", "poop", "willy", "god"];
+const exemptWords = ["hell", "screw", "crap", "poop", "willy", "god", "bum"];
 
 // filter.removeWords("hell");
 // filter.removeWords("screw");
