@@ -14,12 +14,12 @@ module.exports.run = (client, message, args) => {
     "https://media3.giphy.com/media/l2JeeOlUhDXKZaYcE/200.webp?cid=ecf05e4712v18dg8fx9e7xi05572wwl4z7wg431eak35srmm&ep=v1_gifs_search&rid=200.webp&ct=g"
   ];
 
-  function randomNumber(min, max) { 
-        return Math.floor(Math.random() * (max - min) + min);
-    } 
+  function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+  }
 
-    const randomNum = randomNumber(0,responses.length);
-  
+  const randomNum = randomNumber(0, responses.length);
+
   message.reply(responses[randomNum]);
 
 }
