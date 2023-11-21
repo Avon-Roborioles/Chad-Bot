@@ -6,10 +6,10 @@ module.exports.run = (client, message, args) => {
   const { EmbedBuilder } = require('discord.js');
 
   //Notes
-  let Title = '11/12 to 11/18 Meetings:';
-  let TuesdayNotes = '- All Members Meeting: 6pm to 8pm';
+  let Title = '11/19 to 11/25 Meetings:';
+  let TuesdayNotes = '- Select Members Meeting: 6pm to 8pm';
   let ThursdayNotes = '- All Members Meeting: 6pm to 8pm';
-  let SaturdayNotes = '-All Members Meeting: 9am to 12pm';
+  let SaturdayNotes = '- Programmers Meeting: 9am to 12pm';
   let MoreNotes = "2 More Weeks till Scrimmage!";
 
 
@@ -19,15 +19,16 @@ module.exports.run = (client, message, args) => {
     .setTitle(Title)
     .setURL('https://www.instagram.com/ahs.roborioles/')
     .setAuthor({ name: 'Chad Bot | Roborioles', iconURL: 'https://asset-cdn.schoology.com/system/files/imagecache/profile_reg/courselogos/logo-1923125308_632db8558d3f9.png?1663940693', url: 'https://www.instagram.com/ahs.roborioles/' })
-    .setDescription('All Meetings for the Week:')
+    //.setDescription('All Meetings for the Week:')
     .addFields(
-      { name: 'Tuesday', value: TuesdayNotes },
-      //{ name: '\u200B', value: '\u200B' },
-      { name: 'Thursday', value: ThursdayNotes, inline: true },
+      // { name: 'Tuesday', value: TuesdayNotes },
+      // //{ name: '\u200B', value: '\u200B' },
+      // { name: 'Thursday', value: ThursdayNotes, inline: true },
+      // // { name: '\u200B', value: '\u200B' },
+      // { name: 'Saturday', value: SaturdayNotes },
       // { name: '\u200B', value: '\u200B' },
-      { name: 'Saturday', value: SaturdayNotes },
-      { name: '\u200B', value: '\u200B' },
-      { name: 'Additional Notes', value: MoreNotes },
+      // { name: 'Additional Notes', value: MoreNotes },
+       { name: 'All Week:', value: 'No meetings! Have a great Thanksgiving Break!' },
     )
     // .addFields({ name: 'Inline field title', value: 'Some value here', inline: true })
     .setTimestamp()
