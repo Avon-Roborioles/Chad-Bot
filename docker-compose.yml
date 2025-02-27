@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  discord-bot:
+    image: node:18
+    container_name: chad-bot-container
+    restart: always
+    working_dir: /app
+    volumes:
+      - .:/app
+    environment:
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+    command: sh -c "npm install && node index.js"
