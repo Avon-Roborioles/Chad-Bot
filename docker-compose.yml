@@ -1,13 +1,13 @@
 version: '3.8'
 
 services:
-  discord-bot:
-    image: node:18
-    container_name: chad-bot-container
-    restart: always
-    working_dir: /app
+  discord-bot:  # 👈 Defines the service name
+    build: .  # 👈 Builds from the Dockerfile in the same directory
+    container_name: chad-bot-container  # 👈 Sets a custom container name
+    restart: always  # 👈 Restarts if the bot crashes
+    working_dir: /app  # 👈 Sets the working directory inside the container
     volumes:
-      - .:/app
+      - .:/app  # 👈 Mounts the current directory into the container
     environment:
-      - DISCORD_TOKEN=${DISCORD_TOKEN}
-    command: sh -c "npm install && node index.js"
+      - DISCORD_TOKEN=${DISCORD_TOKEN}  # 👈 Passes the bot token from the .env file
+    command: sh -c "npm install && node index.js"  # 👈 Runs the bot
