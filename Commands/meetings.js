@@ -10,7 +10,7 @@ module.exports.run = (client, message, args) => {
   let TuesdayNotes = '- All Team Meeting: 6pm to 7pm @ L101';
   let ThursdayNotes = '- Select Members Meeting: 6pm to 8pm  River Birch STEAM Night for Team 26';
   let SaturdayNotes = '- Select Members Meeting!: 9am to 12pm, Team Fun Time Noon to 1:30 PM';
-  let MoreNotes = "2 Weeks till State!";
+  let MoreNotes = "1 Week till State!";
 
 
   // inside a command, event listener, etc.
