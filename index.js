@@ -65,7 +65,8 @@ client.on("messageCreate", (message) => {
     const command = client.commands.get("profanity");
     command.run(client, message);
 
-  } else if (message.content.startsWith(prefix) && (message.channel == botChannel || testChannel)) {
+  } else if (message.content.startsWith(prefix)) {
+    //  } else if (message.content.startsWith(prefix) && (message.channel == botChannel || testChannel)) {
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const commandName = args.shift();
 
