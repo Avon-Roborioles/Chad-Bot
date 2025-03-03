@@ -1,10 +1,12 @@
 module.exports.run = (client, message, args) => {
-let question = args.join(" ");
+    let question = args.join(" ");
+    let randomNum = Math.random();
 
-    if (Math.random() > 0.5) {
-    message.channel.send("Yes!");
-} else {
-    message.channel.send("No!");
-}
-
-}
+    if (randomNum < 0.05) {
+        message.channel.send("I don't care");
+    } else if (randomNum < 0.525) { // 47.5% chance
+        message.channel.send("Yes!");
+    } else { // 47.5% chance
+        message.channel.send("No!");
+    }
+};
