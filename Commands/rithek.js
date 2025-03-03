@@ -12,7 +12,7 @@ module.exports.run = async (client, message, args) => {
     // 2. Send a DM to the mentioned user
     try {
         const dmChannel = await mentionedUser.createDM();
-        message.member.send("Get RITHEKD");
+        await dmChannel.send("Get RITHEKD!");
 
         // Send the image
         await dmChannel.send({
