@@ -12,5 +12,5 @@ module.exports.run = (client, message, args) => {
 
 
   // inside a command, event listener, etc.
-  message.channel.send({content: "All commands include /help, /ping, /say, & /self-destruct, /ask, /dm, /magicball, /rithek, /weather, & /promemes !"});
+  message.channel.send({content: "All commands include /help, /ping, /team, /say, & /self-destruct, /ask, /dm, /magicball, /rithek, /weather, & /promemes !"});
   }
