@@ -2,7 +2,7 @@ const axios = require('axios');
 
 module.exports.run = async (client, message, args) => {
     if (!args.length) {
-        return message.channel.send("Please provide a team number or event name. Example: `/ftc 12345`");
+        return message.channel.send("Please provide a team number or event name. Example: `/team 12345`");
     }
 
     const query = args.join(" ");
