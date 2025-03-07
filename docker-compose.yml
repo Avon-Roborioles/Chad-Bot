@@ -9,5 +9,6 @@ services:
     volumes:
       - .:/app  # 👈 Mounts the current directory into the container
     environment:
-      - DISCORD_TOKEN=${DISCORD_TOKEN}  # 👈 Passes the bot token from the .env file
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+      - FTC_API_KEY=${FTC_API_KEY} # 👈 Passes the bot token from the .env file
     command: sh -c "npm install && node index.js"  # 👈 Runs the bot
