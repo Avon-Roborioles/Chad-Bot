@@ -6,7 +6,7 @@ const options = {
   method: 'GET',
   url: 'https://programming-memes-images.p.rapidapi.com/v1/memes',
   headers: {
-    'X-RapidAPI-Key': '8d2ee8fec4msh50965177990babep1427a4jsnb52e755768e7',//RAK,
+    'X-RapidAPI-Key': RAK,
     'X-RapidAPI-Host': 'programming-memes-images.p.rapidapi.com'
   }
 };
