@@ -7,6 +7,9 @@ module.exports.run = async (client, message, args) => {
 
     const location = args.join(" ");
 
+    // Inform the user that the weather data is being fetched
+    const loadingMessage = await message.channel.send(`🔄 Fetching weather information for **${location}**...`);
+
     try {
         // 1️⃣ Convert city/state to lat/lon using Open-Meteo
         const geoResponse = await axios.get("https://geocoding-api.open-meteo.com/v1/search", {
@@ -42,14 +45,36 @@ module.exports.run = async (client, message, args) => {
 
         // 4️⃣ Send the weather info to Discord
         const weatherMessage = `🌍 **Weather for ${name}, ${admin1}:**
-🌡️ **Temperature**: ${forecast.temperature}°F
+🌡️ ** High Temperature Today**: ${forecast.temperature}°F
 ☁️ **Condition**: ${forecast.shortForecast}
 🌬️ **Wind**: ${forecast.windSpeed} ${forecast.windDirection}`;
 
-        message.channel.send(weatherMessage);
+        // 5️⃣ Check for severe weather alerts
+        const alertsResponse = await axios.get(`https://api.weather.gov/alerts/active?area=${place.stateCode}`);
+        const alerts = alertsResponse.data.features;
+
+        if (alerts.length > 0) {
+            let alertsMessage = `⚠️ **Severe Weather Alerts:**`;
+            alerts.forEach(alert => {
+                const alertInfo = alert.properties;
+                alertsMessage += `
+**${alertInfo.headline}**
+Severity: ${alertInfo.severity}
+Effective: ${new Date(alertInfo.effective).toLocaleString()}
+Expires: ${new Date(alertInfo.expires).toLocaleString()}
+Description: ${alertInfo.description}`;
+            });
+            message.channel.send(weatherMessage + "\n" + alertsMessage);
+        } else {
+            message.channel.send(weatherMessage + "\nNo active severe weather alerts for this location.");
+        }
+
+        // Delete the loading message
+        loadingMessage.delete();
 
     } catch (error) {
         console.error("Error:", error.response?.data || error.message);
         message.channel.send("❌ Error fetching weather data. Try again later.");
+        loadingMessage.delete();
     }
 };
