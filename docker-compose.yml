@@ -10,6 +10,6 @@ services:
       - .:/app  # 👈 Mounts the current directory into the container
     environment:
       - DISCORD_TOKEN=${DISCORD_TOKEN}
-      - FTC_API_KEY=${FTC_API_KEY}
-      -  # 👈 Passes the bot token from the .env file
-    command: sh -c "npm install && node index.js"  # 👈 Runs the bot
+      - FTC_API_KEY=${FTC_API_KEY} # 👈 Passes the bot token from the .env file\
+      - X_RAPIDAPI_KEY=${X_RAPIDAPI_KEY}
+    command: sh -c "npm install && node index.js" 
