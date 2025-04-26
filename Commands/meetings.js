@@ -6,12 +6,12 @@ module.exports.run = (client, message, args) => {
   const { EmbedBuilder } = require('discord.js');
 
   //Notes
-  let Title = '3/16 to 3/22 Meetings:';
-  let TuesdayNotes = '- Girl Scout Event (Team 15 Only) 6pm to 7pm';
-  let WednesdayNotes = 'Team Debrief and Dodgeball 6pm to 8 pm'
+  let Title = '4/20 to 4/26 Meetings:';
+  let TuesdayNotes = '- No Meetings';
+  let WednesdayNotes = 'No Meetings';
   let ThursdayNotes = '- No Meetings';
-  let SaturdayNotes = '- No Meetings ';
-  let MoreNotes = "Enjoy Your Spring Break";
+  let SaturdayNotes = '- Team 14 Meeting 10-1pm ';
+  let MoreNotes = ":)";
 
 
   // inside a command, event listener, etc.
@@ -24,7 +24,6 @@ module.exports.run = (client, message, args) => {
     .addFields(
       { name: 'Tuesday', value: TuesdayNotes },
       //{ name: '\u200B', value: '\u200B' },
-      { name: 'Wednesday', value: WednesdayNotes},
       { name: 'Thursday', value: ThursdayNotes, inline: true },
       // { name: '\u200B', value: '\u200B' },
       { name: 'Saturday', value: SaturdayNotes },
