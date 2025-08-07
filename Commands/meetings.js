@@ -10,8 +10,8 @@ module.exports.run = (client, message, args) => {
   let TuesdayNotes = '- No Meetings';
   let WednesdayNotes = 'No Meetings';
   let ThursdayNotes = '- No Meetings';
-  let SaturdayNotes = '- Team 14 Meeting 10-1pm ';
-  let MoreNotes = ":)";
+  let SaturdayNotes = '- No Meetings';
+  let MoreNotes = "Get Ready for the Robotics callout meeting in a few weeks";
 
 
   // inside a command, event listener, etc.
@@ -27,13 +27,13 @@ module.exports.run = (client, message, args) => {
       { name: 'Thursday', value: ThursdayNotes, inline: true },
       // { name: '\u200B', value: '\u200B' },
       { name: 'Saturday', value: SaturdayNotes },
-      { name: '\u200B', value: '\u200B' },
+      //{ name: '\u200B', value: '\u200B' },
       { name: 'Additional Notes', value: MoreNotes },
-      // { name: 'All Week:', value: 'No meetings! Have a great Thanksgiving Break!' },
+    
     )
     // .addFields({ name: 'Inline field title', value: 'Some value here', inline: true })
     .setTimestamp()
-    .setFooter({ text: 'If you have any questions, Message a @Mod for Info', iconURL: 'https://asset-cdn.schoology.com/system/files/imagecache/profile_reg/courselogos/logo-1923125308_632db8558d3f9.png?1663940693' });
+    .setFooter({ text: 'If you have any questions, Message a @Moderator or @Administrator for Info, If this is Incorrect Message Noah B', iconURL: 'https://asset-cdn.schoology.com/system/files/imagecache/profile_reg/courselogos/logo-1923125308_632db8558d3f9.png?1663940693' });
 
 
   message.channel.send({ embeds: [Meetings_Calendar] });
