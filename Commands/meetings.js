@@ -6,13 +6,13 @@ module.exports.run = (client, message, args) => {
   const { EmbedBuilder } = require('discord.js');
 
   //Notes
-  let Title = '8/10 to 8/16 Meetings:';
+  let Title = '8/17 to 8/23 Meetings:';
   let TuesdayNotes = '- No Meetings';
-  let WednesdayNotes = '- Activity Booth in Main Gym during SRT and Lunch';
+  let WednesdayNotes = '- No Meetings';
   let ThursdayNotes = '- No Meetings';
-  let FridayNotes = '- Callout Meeting in L119 after school till 3:40';
+  let FridayNotes = '- No Meetings';
   let SaturdayNotes = '- No Meetings';
-  let MoreNotes = "Get Ready for the Robotics callout meeting on Friday. Applications will be Due Middle of Next Week.";
+  let MoreNotes = "Applications and Schoology Assignments will be due no later then Wednesday, August, 27 @ 3:10 PM ";
 
 
   // inside a command, event listener, etc.
@@ -24,13 +24,14 @@ module.exports.run = (client, message, args) => {
     //.setDescription('All Meetings for the Week:')
     .addFields(
       // { name: 'Tuesday', value: TuesdayNotes },
-      { name: 'Wednesday', value: WednesdayNotes},
+      // { name: 'Wednesday', value: WednesdayNotes},
       // { name: 'Thursday', value: ThursdayNotes, inline: false },
-      { name: 'Friday', value: FridayNotes },
+      // { name: 'Friday', value: FridayNotes },
       // { name: 'Saturday', value: SaturdayNotes },
-      //{ name: '\u200B', value: '\u200B' },
+      // { name: '\u200B', value: '\u200B' },
+      { name: 'All Week:', value: 'No meetings! Make sure to get your Applications turned in and the Schoology Tasks Completed' },
       { name: 'Additional Notes', value: MoreNotes },
-      // { name: 'All Week:', value: 'No meetings! Have a great Thanksgiving Break!' },
+      
     )
     // .addFields({ name: 'Inline field title', value: 'Some value here', inline: true })
     .setTimestamp()
@@ -39,3 +40,5 @@ module.exports.run = (client, message, args) => {
 
   message.channel.send({ embeds: [Meetings_Calendar] });
 }
+
+
