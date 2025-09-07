@@ -42,7 +42,7 @@ client.on("ready", () => {
 
 
   client.user.setPresence({
-    activities: [{ name: `Sample Peeps`, type: ActivityType.Watching }],
+    activities: [{ name: `Artifact Peeps`, type: ActivityType.Watching }],
     status: 'Online',
   });
 
