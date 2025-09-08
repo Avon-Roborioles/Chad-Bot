@@ -3,7 +3,7 @@ const axios = require("axios");
 module.exports.run = async (client, message, args) => {
   if (!args.length) {
     return message.channel.send(
-      "Please provide a team number. Example: `/teams 12345`"
+      "Please provide a team number. Example: `/team 12345`"
     );
   }
 
@@ -37,18 +37,17 @@ module.exports.run = async (client, message, args) => {
       team.name ||
       team.teamName ||
       team.nickname ||
-      team.teamNickname ||
-      "Unknown Team Name";
+      team.teamNickname;
     // extract and normalize
     const lines = [];
     // always have the header
     lines.push(
-      `ðŸ¤– **FTC Team ${team.teamNumber} â€“ ${team.name || "Unknown Team Name"}**`
+      `ðŸ¤– **FTC Team ${team.teamNumber} â€“ ${team.nameShort}**`
     );
 
     // school
-    if (team.schoolName && team.schoolName.trim() !== "") {
-      lines.push(`ðŸ« **School:** ${team.schoolName}`);
+    if (team.nameFull && team.nameFull.trim() !== "") {
+      lines.push(`ðŸ« **School:** ${team.nameFull}`);
     }
 
     // location (city, state, country)
@@ -87,4 +86,3 @@ module.exports.help = {
   description: "Get information about an FTC robotics team using the FIRST API.",
   usage: "/teams <teamNumber>",
 };
-
