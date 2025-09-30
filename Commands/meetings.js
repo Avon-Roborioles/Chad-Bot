@@ -6,13 +6,13 @@ module.exports.run = (client, message, args) => {
   const { EmbedBuilder } = require('discord.js');
 
   //Notes
-  let Title = '9/21 to 9/27 Meetings:';
+  let Title = '9/28 to 10/4 Meetings:';
   let TuesdayNotes = '- Meeting - 6 to 8pm';
   let WednesdayNotes = '- Leadership Meeting during SRT';
   let ThursdayNotes = '- Meeting - 6 to 8pm';
   let FridayNotes = '- No Meetings';
   let SaturdayNotes = '- Meeting - 9am to 12pm';
-  let MoreNotes = "Shirt Designs are due on Thursday ";
+  let MoreNotes = "Get your $50 dues turned in";
 
 
   // inside a command, event listener, etc.
