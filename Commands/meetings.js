@@ -24,7 +24,7 @@ module.exports.run = (client, message, args) => {
     //.setDescription('All Meetings for the Week:')
     .addFields(
       { name: 'Tuesday', value: TuesdayNotes },
-      { name: 'Wednesday', value: WednesdayNotes},
+      // { name: 'Wednesday', value: WednesdayNotes},
       { name: 'Thursday', value: ThursdayNotes },
       // { name: 'Friday', value: FridayNotes },
       { name: 'Saturday', value: SaturdayNotes },
