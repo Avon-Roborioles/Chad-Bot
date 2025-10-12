@@ -6,13 +6,13 @@ module.exports.run = (client, message, args) => {
   const { EmbedBuilder } = require('discord.js');
 
   //Notes
-  let Title = '10/5 to 10/11 Meetings:';
+  let Title = '10/12 to 10/18 Meetings:';
   let TuesdayNotes = '- Meeting - 6 to 8pm';
   let WednesdayNotes = '- Leadership Meeting during SRT';
   let ThursdayNotes = '- Meeting - 6 to 8pm';
   let FridayNotes = '- No Meetings';
   let SaturdayNotes = '- Meeting - 9am to 12pm';
-  let MoreNotes = "Get your $50 dues turned in";
+  let MoreNotes = "Enjoy Your Fall Break :)";
 
 
   // inside a command, event listener, etc.
@@ -23,13 +23,13 @@ module.exports.run = (client, message, args) => {
     .setAuthor({ name: 'Chad Bot | Roborioles', iconURL: 'https://asset-cdn.schoology.com/system/files/imagecache/profile_reg/courselogos/logo-1923125308_632db8558d3f9.png?1663940693', url: 'https://www.instagram.com/ahs.roborioles/' })
     //.setDescription('All Meetings for the Week:')
     .addFields(
-      { name: 'Tuesday', value: TuesdayNotes },
+      // { name: 'Tuesday', value: TuesdayNotes },
       // { name: 'Wednesday', value: WednesdayNotes},
-      { name: 'Thursday', value: ThursdayNotes },
+      // { name: 'Thursday', value: ThursdayNotes },
       // { name: 'Friday', value: FridayNotes },
-      { name: 'Saturday', value: SaturdayNotes },
+      // { name: 'Saturday', value: SaturdayNotes },
       // { name: '\u200B', value: '\u200B' },
-      // { name: 'All Week:', value: 'No meetings! Make sure to get your Applications turned in and the Schoology Tasks Completed' },
+       { name: 'All Week:', value: 'No meetings!' },
       { name: 'Additional Notes', value: MoreNotes },
       
     )
