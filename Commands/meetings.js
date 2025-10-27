@@ -8,7 +8,7 @@ module.exports.run = (client, message, args) => {
   //Notes
   let Title = '10/26 to 11/1 Meetings:';
   let TuesdayNotes = '- Meeting - 6 to 8pm';
-  let WednesdayNotes = '- Trunk or Treat 5:30 to 8pm';
+  let WednesdayNotes = '- Trunk or Treat - 5:30 to 8pm';
   let ThursdayNotes = '- Meeting - 6 to 8pm';
   let FridayNotes = '- No Meetings';
   let SaturdayNotes = '- Meeting - 9am to 12pm';
