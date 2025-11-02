@@ -12,7 +12,7 @@ module.exports.run = (client, message, args) => {
   let ThursdayNotes = '- Meeting - 6 to 8pm';
   let FridayNotes = '- No Meetings';
   let SaturdayNotes = '- Meeting - 9am to 12pm';
-  let MoreNotes = "Get your dues turned in!";
+  let MoreNotes = "WTP event for team 26 on Saturday from 1 to 3 pm";
 
 
   // inside a command, event listener, etc.
@@ -24,7 +24,7 @@ module.exports.run = (client, message, args) => {
     //.setDescription('All Meetings for the Week:')
     .addFields(
       { name: 'Tuesday', value: TuesdayNotes },
-      { name: 'Wednesday', value: WednesdayNotes},
+      // { name: 'Wednesday', value: WednesdayNotes},
       { name: 'Thursday', value: ThursdayNotes },
       // { name: 'Friday', value: FridayNotes },
       { name: 'Saturday', value: SaturdayNotes },
