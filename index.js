@@ -64,23 +64,29 @@ client.on("messageCreate", (message) => {
   if (message.author.bot) return;
 
   // profanity filter
+   const cleanedContent = message.content
+  .replace(/<@!?(\d+)>/g, "")     // @user
+  .replace(/<@&(\d+)>/g, "")      // @role
+  .replace(/<#(\d+)>/g, "")       // #channel
+  .trim();
+
+// ✅ ONLY trigger if the entire message is 67 (not inside a string)
+if (/^(67|6-7|6 7|6\s*or\s*7|six\s*seven|⁶⁷)$/i.test(cleanedContent)) {
+  const command = client.commands.get("67");
+  if (command) {
+    console.log("Triggered the 67 command (exact match)");
+    command.run(client, message);
+  }
+}
+
+
+  // profanity filter
   if (filter.isProfane(message.content)) {
     const command = client.commands.get("profanity");
     if (command) command.run(client, message);
   }
 
-  // ?? Trigger "67" command whenever "67" appears anywhere in the message
-  else if (message.content.includes("67")) {
-    const command = client.commands.get("67");
-    if (command) {
-      console.log("Triggered the 67 command!");
-      command.run(client, message);
-    } else {
-      console.warn("67 command not found!");
-    }
-  }
-
-  // standard slash-like commands
+  // slash-style commands
   else if (message.content.startsWith(prefix)) {
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const commandName = args.shift();

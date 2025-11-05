@@ -6,7 +6,7 @@ module.exports.run = (client, message, args) => {
   const { EmbedBuilder } = require('discord.js');
 
   //Notes
-  let Title = '10/26 to 11/1 Meetings:';
+  let Title = '11/2 to 11/8 Meetings:';
   let TuesdayNotes = '- Meeting - 6 to 8pm';
   let WednesdayNotes = '- Trunk or Treat - 5:30 to 8pm';
   let ThursdayNotes = '- Meeting - 6 to 8pm';
